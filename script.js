@@ -27,26 +27,34 @@ function getCards(data){
 }
 
 function sliceCards(data){
-    const activeLink = sessionStorage.getItem("activeLink");
+    
+    let activeLink = getSessionStorage();
     console.log(activeLink)
 
-    if(!activeLink) return;    
-    
-    if(activeLink){
-        for(let item of menuLinks){
-            item.classList.remove('active');
-            if(item.id == activeLink ){
-                item.classList.add('active');
-            }
-            
-        }
-        
-            
+    for(let item of menuLinks){
+        item.classList.remove('active');
+        if(item.id == activeLink ){
+            item.classList.add('active');
+        } 
     }
+        
     const filterArr = filterCards(data, activeLink );
     const newArr = filterArr.slice(0, COUNT_SHOW)
     
     getCards(newArr);
+}
+
+
+function getSessionStorage(){
+    if(sessionStorage.getItem("activeLink")){
+        let activeLink = sessionStorage.getItem("activeLink");
+        return activeLink;
+        
+            
+    }
+    else {
+        return 'all'
+    }
 }
 
 
