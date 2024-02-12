@@ -27,8 +27,10 @@ function getCards(data){
 }
 
 function sliceCards(data){
-    const activeLink = localStorage.getItem("activeLink");
+    const activeLink = sessionStorage.getItem("activeLink");
     console.log(activeLink)
+
+    if(!activeLink) return;    
     
     if(activeLink){
         for(let item of menuLinks){
@@ -60,7 +62,7 @@ function filterButtons(e){
 
  menuLink.classList.add('active');
  const activeLink = menuLink.id;
-localStorage.setItem("activeLink", activeLink);
+sessionStorage.setItem("activeLink", activeLink);
 
 sliceCards(cards);
 
@@ -96,7 +98,7 @@ function showMore(e){
     
     let countShowMore = COUNT_SHOW * count;
     
-    const activeLink = localStorage.getItem("activeLink");
+    const activeLink = sessionStorage.getItem("activeLink");
     const newArr = filterCards(cards, activeLink );
     if (newArr.length < countShowMore){button.classList.add('hidden')};
     
