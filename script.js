@@ -106,7 +106,7 @@ function showMore(e){
     
     let countShowMore = COUNT_SHOW * count;
     
-    const activeLink = sessionStorage.getItem("activeLink");
+    const activeLink = getSessionStorage();
     const newArr = filterCards(cards, activeLink );
     if (newArr.length < countShowMore){button.classList.add('hidden')};
     
