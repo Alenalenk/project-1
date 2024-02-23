@@ -39,7 +39,8 @@ function sliceCards(data){
     }
         
     const filterArr = filterCards(data, activeLink );
-    const newArr = filterArr.slice(0, COUNT_SHOW)
+    const newArr = filterArr.slice(0, COUNT_SHOW);
+    console.log(COUNT_SHOW)
     
     getCards(newArr);
 }
