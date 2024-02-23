@@ -94,8 +94,8 @@ body.open {
   }
 }
 .image__wrapper img {
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 275px;
   -o-object-fit: contain;
      object-fit: contain;
 }
