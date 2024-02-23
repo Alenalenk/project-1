@@ -29,7 +29,7 @@ function getCards(data){
 function sliceCards(data){
     
     let activeLink = getSessionStorage();
-    console.log(activeLink)
+   
 
     for(let item of menuLinks){
         item.classList.remove('active');
